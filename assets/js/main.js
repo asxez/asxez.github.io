@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('contextmenu', (evt) => {
+    evt.preventDefault();
+});
+
 let btnMobileMenu = document.querySelector('.btn-mobile-menu__icon');
 let navigationWrapper = document.querySelector('.navigation-wrapper');
 
