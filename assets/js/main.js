@@ -70,6 +70,24 @@ document.addEventListener('contextmenu', (evt) => {
     evt.preventDefault();
 });
 
+function msg() {
+    console.log(
+        "%c\n" +
+        "            _______   ________ \n" +
+        "     /\\    / ____\\ \\ / /  ____|\n" +
+        "    /  \\  | (___  \\ V /| |__   \n" +
+        "   / /\\ \\  \\___ \\  > < |  __|  \n" +
+        "  / ____ \\ ____) |/ . \\| |____ \n" +
+        " /_/    \\_\\_____//_/ \\_\\______|\n" +
+        "                               \n" +
+        "                               \n"
+        , 'color:red');
+    console.log('%cASXE的主页\nhttps://www.asxe.vip', 'color:green');
+
+}
+
+window.addEventListener('load', msg);
+
 let btnMobileMenu = document.querySelector('.btn-mobile-menu__icon');
 let navigationWrapper = document.querySelector('.navigation-wrapper');
 
