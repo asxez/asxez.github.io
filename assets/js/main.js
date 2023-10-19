@@ -43,13 +43,27 @@ function decryptEmail(encoded) {
     window.location.href = "mailto:" + address;
 }
 
+
+function ShowRunTime(id) {
+    let BootDate = new Date("2023/10/17 19:13:00");
+    let t = new Date,
+        o = parseInt((t - BootDate).toString()),
+        n = Math.floor(o / 864e5),
+        a = Math.floor(o % 864e5 / 36e5),
+        r = Math.floor(o % 864e5 % 36e5 / 6e4),
+        h = Math.round(o % 864e5 % 36e5 % 6e4 / 1e3),
+        u = n + " 天 " + a + " 时 " + r + " 分 " + h + " 秒";
+    document.getElementById(id).textContent = "本站已运行 " + u
+}
+setInterval("ShowRunTime('RunTime')", 1e3)
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    // 获取一言数据
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let res = JSON.parse(this.responseText);
-            document.getElementById('description').innerHTML = res.hitokoto + "<br/> 「<strong>" + res.from + "</strong>」";
+            document.getElementById('description').innerHTML = res['hitokoto'] + "<br/> 「<strong>" + res['from'] + "</strong>」";
         }
     };
     xhr.open("GET", "https://v1.hitokoto.cn", true);
@@ -66,8 +80,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
 document.addEventListener('contextmenu', (evt) => {
     evt.preventDefault();
+    // let div = document.createElement("div");
+    // let span = document.createElement("span");
+    // let header = document.getElementById('panel');
+    // span.textContent = '为了浏览体验，本站禁用右键';
+    // div.appendChild(span);
+    // div.style.top = '15px';
+    // div.style.display = 'flex';
+    // div.style.width = 'auto+10px';
+    // div.style.height = '40px';
+    // div.style.position = 'fixed';
+    // div.style.alignItems = 'center';
+    // div.style.justifyContent = 'center';
+    // div.style.backgroundColor = 'black';
+    // span.style.color = 'red';
+    //
+    // header.appendChild(div);
+    // setTimeout(() => {
+    //     div.remove();
+    // },2000);
 });
 
 function msg() {
@@ -81,12 +115,13 @@ function msg() {
         " /_/    \\_\\_____//_/ \\_\\______|\n" +
         "                               \n" +
         "                               \n"
-        , 'color:red');
+    ,'color:red');
     console.log('%cASXE的主页\nhttps://www.asxe.vip', 'color:green');
 
 }
 
 window.addEventListener('load', msg);
+
 
 let btnMobileMenu = document.querySelector('.btn-mobile-menu__icon');
 let navigationWrapper = document.querySelector('.navigation-wrapper');
