@@ -85,6 +85,24 @@ function displayTypingEffect(outputElement, text) {
     typeText();
 }
 
+function msg() {
+    console.log(
+        "%c\n" +
+        "            _______   ________ \n" +
+        "     /\\    / ____\\ \\ / /  ____|\n" +
+        "    /  \\  | (___  \\ V /| |__   \n" +
+        "   / /\\ \\  \\___ \\  > < |  __|  \n" +
+        "  / ____ \\ ____) |/ . \\| |____ \n" +
+        " /_/    \\_\\_____//_/ \\_\\______|\n" +
+        "                               \n" +
+        "                               \n"
+        , 'color:red');
+    console.log('%cASXE的主页\nhttps://www.asxe.vip', 'color:green');
+
+}
+
+window.addEventListener('load', msg);
+
 function sjyy() {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
