@@ -45,7 +45,7 @@ function decryptEmail(encoded) {
 
 
 function ShowRunTime(id) {
-    let BootDate = new Date("2023/10/17 19:13:00");
+    let BootDate = new Date("2023/3/14 9:00:00");
     let t = new Date,
         o = parseInt((t - BootDate).toString()),
         n = Math.floor(o / 864e5),
