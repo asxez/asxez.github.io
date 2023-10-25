@@ -116,18 +116,17 @@ function sjyy() {
     xhr.send();
 }
 
-function background() {
+(function () {
     function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
     let fin = getRandomInt(1, 8);
     let body_style = document.body.style;
-    body_style.background = `url("../assets/image/background${fin}.jpg") center center no-repeat #666`
+    body_style.background = `url("../assets/image/a${fin}.webp") center center no-repeat #666`
     body_style.backgroundSize = 'cover';
     body_style.backgroundAttachment = 'fixed';
-
-}
-background();
+})();
 
 function nowtime() {
     let date = new Date();
@@ -162,5 +161,5 @@ document.addEventListener('contextmenu', (evt) => {
 document.getElementById('sjyy').addEventListener('click', () => {
     document.getElementById('text').textContent = '新的一言正在赶来的路上. . . ';
     document.getElementById('from').textContent = '';
-    setTimeout(sjyy,500);
+    setTimeout(sjyy, 500);
 });
