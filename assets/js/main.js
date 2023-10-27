@@ -128,6 +128,17 @@ function sjyy() {
     body_style.backgroundAttachment = 'fixed';
 })();
 
+(function () {
+    let isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        window.location.href = '/mobile.html';
+    } else {
+        console.log("PC");
+    }
+})();
+
+
 function nowtime() {
     let date = new Date();
     let hour = date.getHours();
