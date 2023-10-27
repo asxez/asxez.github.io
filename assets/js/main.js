@@ -132,7 +132,18 @@ function sjyy() {
     let isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobile) {
-        window.location.href = '/mobile.html';
+        // window.location.href = '/mobile.html';
+        let body = document.body;
+        body.innerHTML = '';
+        body.style = null;
+        let h1 = document.createElement('h1');
+        let style = h1.style;
+        style.color = 'red';
+        style.textAlign = 'center';
+        style.fontSize = '40px';
+        style.marginTop = '50%';
+        h1.textContent = '请在PC端浏览本页';
+        body.appendChild(h1);
     } else {
         console.log("PC");
     }
