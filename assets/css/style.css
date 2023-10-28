@@ -182,6 +182,8 @@ a {
 }
 
 .social .link a .icon {
+    width: 21px;
+    height: 21px;
     margin: 0 12px;
     transition: transform .5s;
 }
