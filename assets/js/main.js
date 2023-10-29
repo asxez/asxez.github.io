@@ -121,7 +121,7 @@ function sjyy() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    let fin = getRandomInt(1, 8);
+    let fin = getRandomInt(1, 16);
     let body_style = document.body.style;
     body_style.background = `url("../assets/image/a${fin}.webp") center center no-repeat #666`
     body_style.backgroundSize = 'cover';
