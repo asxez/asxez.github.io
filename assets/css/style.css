@@ -280,11 +280,13 @@ a {
 }
 
 .sjyy .content #text {
-    margin: 18px;
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: 5px;
 }
 
 .sjyy .content #from {
-    margin-top: 30px;
+    margin-top: 28px;
     align-self: flex-end;
     font-weight: bold;
 }
